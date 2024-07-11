@@ -1,8 +1,8 @@
-import { Genre } from "./Genre";
-import { Platform } from "./Platform";
-import { Publisher } from "./Plublisher";
+import Genre from "./Genre";
+import Platform from "./Platform";
+import Publisher from "./Plublisher";
 
-export interface Game {
+export default interface Game {
     description_raw: string;
     genres: Genre[];
     publishers: Publisher[];
