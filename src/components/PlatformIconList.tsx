@@ -1,5 +1,5 @@
-import { Platform } from "../hooks/usePlatforms"
-import { HStack, Icon } from "@chakra-ui/react"
+import { Platform } from "../entities/Platform";
+import { HStack, Icon } from "@chakra-ui/react";
 
 import {
     FaWindows,
@@ -8,14 +8,14 @@ import {
     FaApple,
     FaLinux,
     FaAndroid,
-} from "react-icons/fa"
-import { MdPhoneIphone } from "react-icons/md"
-import { SiNintendo } from "react-icons/si"
-import { BsGlobe } from "react-icons/bs"
-import { IconType } from "react-icons"
+} from "react-icons/fa";
+import { MdPhoneIphone } from "react-icons/md";
+import { SiNintendo } from "react-icons/si";
+import { BsGlobe } from "react-icons/bs";
+import { IconType } from "react-icons";
 
 interface Props {
-    platforms: Platform[]
+    platforms: Platform[];
 }
 
 const PlatformIconList = ({ platforms }: Props) => {
@@ -29,7 +29,7 @@ const PlatformIconList = ({ platforms }: Props) => {
         web: BsGlobe,
         android: FaAndroid,
         xbox: FaXbox,
-    }
+    };
     return (
         <>
             <HStack marginY={1}>
@@ -42,7 +42,7 @@ const PlatformIconList = ({ platforms }: Props) => {
                 ))}
             </HStack>
         </>
-    )
-}
+    );
+};
 
-export default PlatformIconList
+export default PlatformIconList;
