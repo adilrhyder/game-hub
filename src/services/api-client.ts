@@ -1,9 +1,9 @@
-import axios, { AxiosRequestConfig } from "axios"
+import axios, { AxiosRequestConfig } from "axios";
 
 export interface FetchResponse<T> {
-    count: number
-    results: T[]
-    next: string | null
+    count: number;
+    results: T[];
+    next: string | null;
 }
 
 const axiosInstance = axios.create({
@@ -11,20 +11,26 @@ const axiosInstance = axios.create({
     params: {
         key: "827939da5d3b4b4ea8ff4dbb55697595",
     },
-})
+});
 
 class APIClient<T> {
-    endpoint: string
+    endpoint: string;
 
     constructor(endpoint: string) {
-        this.endpoint = endpoint
+        this.endpoint = endpoint;
     }
 
     getAll = (config: AxiosRequestConfig) => {
         return axiosInstance
             .get<FetchResponse<T>>(this.endpoint, config)
-            .then((res) => res.data)
-    }
+            .then((res) => res.data);
+    };
+
+    get = (id: string | number) => {
+        return axiosInstance
+            .get<T>(this.endpoint + "/" + id)
+            .then((res) => res.data);
+    };
 }
 
-export default APIClient
+export default APIClient;
