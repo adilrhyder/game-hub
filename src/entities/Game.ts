@@ -1,7 +1,11 @@
-import { Platform } from "./usePlatforms";
+import { Genre } from "./Genre";
+import { Platform } from "./Platform";
+import { Publisher } from "./Plublisher";
 
 export interface Game {
     description_raw: string;
+    genres: Genre[];
+    publishers: Publisher[];
     id: number;
     name: string;
     slug: string;
